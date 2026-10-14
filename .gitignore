@@ -1,0 +1,44 @@
+# ---------------------------------------------------------------------------
+# WindowKeeper — 不纳入版本控制的内容
+# ---------------------------------------------------------------------------
+
+# 构建产物：由 build.py 生成，用 python build.py 随时可重建，不进仓库
+01_WindowKeeper/dist/
+01_WindowKeeper/build/
+*.spec.bak
+
+# Python 编译缓存
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# 虚拟环境
+.venv/
+venv/
+env/
+ENV/
+
+# 本地备份（体积大且是冗余副本）
+_backup_*/
+
+# 测试与诊断脚本产生的临时输出
+*_out.txt
+*_err.txt
+_out.txt
+_err.txt
+
+# 诊断包（桌面上那份不在这里，但防止误存）
+WindowKeeper诊断_*.zip
+
+# 编辑器与系统杂项
+.vscode/
+.idea/
+*.swp
+*~
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# PyInstaller 单文件模式可能留下的解压目录
+01_WindowKeeper/dist/WindowKeeper/

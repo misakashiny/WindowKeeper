@@ -1,0 +1,19 @@
+# WindowKeeper 运行与打包依赖
+#
+# 安装：python -m pip install -r requirements.txt
+#
+# 本机验证过的版本（Python 3.13.2 / Windows 11）：
+#   PySide6     6.12.0
+#   pywin32     312
+#   PyInstaller 6.12.0   ← 只有打包时才需要（build.py）
+#
+# 注意：不再依赖 keyboard 库。
+#   热键原先用 keyboard 实现，实测在本机「普通按键能收到、组合键回调 0 次」
+#   （原因见 03_文档\02_架构与模块.md），已改为 Win32 RegisterHotKey，
+#   只依赖标准库 ctypes + pywin32，因此 keyboard 故意不写在这里。
+
+PySide6>=6.6           # Qt 界面 / 托盘 / 绘图（monitor_map 缩略图用 QPainter 画）
+pywin32>=306           # Win32 API：SetWindowPos、RegisterHotKey、显示器枚举
+
+# ---- 仅打包时需要 ----
+# pyinstaller>=6.0
